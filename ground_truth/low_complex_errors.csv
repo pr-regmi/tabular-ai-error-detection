@@ -1,6 +1,6 @@
 row,column,error_type
-10,Quantity,Missing Value
-51,Price,Missing Value
-42,Subtotal,Formula Error
-60,Subtotal,Formula Error
-94,Subtotal,Formula Error
+11,Quantity,Missing Value
+52,Price,Missing Value
+43,Subtotal,Formula Error
+61,Subtotal,Formula Error
+95,Subtotal,Formula Error
