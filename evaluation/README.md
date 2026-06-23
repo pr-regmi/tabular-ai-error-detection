@@ -11,6 +11,7 @@ Planned contents:
 * evaluation metrics
   
 Current progress:
-  Low Complexity → completed
-  Medium Complexity → planned
-  High Complexity → planned
+
+Low Complexity → completed
+Medium Complexity → planned
+High Complexity → planned
