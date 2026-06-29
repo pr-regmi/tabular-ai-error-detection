@@ -36,8 +36,8 @@ Apply the same AI evaluation process across all datasets and compare performance
 ## Current Progress
 
 - [x] Created repository and project setup  
-- [ ] Design synthetic datasets  
-- [ ] Introduce controlled errors  
+- [x] Design synthetic datasets  
+- [ x] Introduce controlled errors  
 - [ ] Evaluate AI performance  
 - [ ] Calculate precision, recall, and F1-score  
 - [ ] Analyze findings  
