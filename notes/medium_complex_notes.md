@@ -12,36 +12,18 @@ Rows: 100
 
 Dependency Level: 5
 
-Columns:
-
-* OrderID
-* CustomerType
-* Quantity
-* Price
-* Discount
-* TaxRate
-* Tax
-* Subtotal
-* Total
-* AmountPaid
-
 Relationships:
 
-1. Subtotal = Quantity × Price
-
-2. If Discount > 0:
-   Subtotal = Subtotal × (1 − Discount)
-
-3. Tax = Subtotal × TaxRate
-
-4. Total = Subtotal + Tax
-
-5. AmountPaid = Total
+* Subtotal = Quantity × Price
+* If Discount > 0, Subtotal = Subtotal × (1 − Discount)
+* Tax = Subtotal × TaxRate
+* Total = Subtotal + Tax
+* AmountPaid = Total
 
 Error Rate:
 
 * Missing Values: 10%
-* Formula Errors / Inconsistent Values: 10%
+* Inconsistent / Formula Errors: 10%
 
 ## Dataset Files
 
@@ -53,23 +35,16 @@ medium_complex_errors.csv → ground truth labels
 
 ## Error Injection Strategy
 
-Inject 20 total errors:
+Injected 20 total errors.
 
 Missing Values (10)
 
-Formula Errors / Inconsistent Values (10)
+* Missing values will be introduced in input columns such as Quantity, Price, Discount, and TaxRate.
 
-Missing values may be introduced in input columns.
+Formula / Inconsistent Errors (10)
 
-Formula errors may be introduced in:
-
-* Discount
-* Tax
-* Subtotal
-* Total
-* AmountPaid
-
-Errors will be distributed across separate rows.
+* Formula errors will be introduced in calculated columns such as Subtotal, Tax, Total, and AmountPaid.
+* Some rows may contain more than one error to better represent real-world data quality issues.
 
 ## Ground Truth Definition
 
@@ -83,8 +58,10 @@ Ground truth stores error labels only and does not store corrected values.
 
 ## Evaluation Plan
 
-Future evaluation will compare AI predictions against ground truth using:
+AI predictions will be compared against the ground truth using:
 
 * Precision
 * Recall
 * F1 Score
+
+The results will be compared with the Low Complexity dataset to examine how increasing structural complexity affects AI-based error detection.
